@@ -1,0 +1,22 @@
+命令：
+./download/rgb_train_downloader.sh
+./download/rgb_val_downloader.sh
+
+文件结构：
+.
+├── self-supervised-depth-completion
+├── data
+|   ├── data_depth_annotated
+|   |   ├── train
+|   |   ├── val
+|   ├── data_depth_velodyne
+|   |   ├── train
+|   |   ├── val
+|   ├── depth_selection
+|   |   ├── test_depth_completion_anonymous
+|   |   ├── test_depth_prediction_anonymous
+|   |   ├── val_selection_cropped
+|   └── data_rgb
+|   |   ├── train
+|   |   ├── val
+├── results
