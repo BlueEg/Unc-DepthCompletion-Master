@@ -24,6 +24,7 @@ STEP TWO(AIRnet):
 >python3 train_step2.py --data-folder path/to/data -b 4 --MDCnet-path /path/to/checkpoint
 
 ## EVALLATION
+And You can get the checkpoints(MDCnet and AIRnet with L1 Loss) from Url:https://drive.google.com/drive/folders/1Vl1fA69sAVOeBk_JPRYnrS87aBlpIJLg?usp=sharing. 
 >python3 eval.py --MDC-path path/to/checkpoint --AIR-path path/to/checkpoint
 
 ## Ackownlagment
