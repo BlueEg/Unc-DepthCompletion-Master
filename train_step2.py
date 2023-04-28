@@ -75,7 +75,11 @@ parser.add_argument('--data-folder',
                     type=str,
                     metavar='PATH',
                     help='data folder (default: none)')
-
+parser.add_argument('--MDCnet-path',
+                    default='./checkpoints/model_best_step1.pth',
+                    type=str,
+                    metavar='PATH',
+                    help='data folder (default: none)')
 parser.add_argument('--val',
                     type=str,
                     default="select",
@@ -227,8 +231,7 @@ def main():
 
     print("=> creating model and optimizer ... ", end='')
 
-    # Bcheckpoint = torch.load("results/MDCnet.criterion=Ucertl2.lr=0.0001.bs=2.wd=0.jitter=0.1.time=2022-12-03@14-15/checkpoint-0.pth.tar", map_location=device)
-    Bcheckpoint = torch.load("pretrained/model_best_step1.pth", map_location=device)
+    Bcheckpoint = torch.load(args.MDCnet_path, map_location=device)
     Base_model.load_state_dict(Bcheckpoint['model'])
     Base_model = torch.nn.DataParallel(Base_model)
     Base_model.eval()

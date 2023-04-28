@@ -75,6 +75,16 @@ parser.add_argument('--data-folder',
                     type=str,
                     metavar='PATH',
                     help='data folder (default: none)')
+parser.add_argument('--MDC-path',
+                    default="pretrained/model_best_step1.pth",
+                    type=str,
+                    metavar='PATH',
+                    help='data folder (default: none)')
+parser.add_argument('--AIR-path',
+                    default="pretrained/model_best_step2-L1.pth",
+                    type=str,
+                    metavar='PATH',
+                    help='data folder (default: none)')
 
 parser.add_argument('--val',
                     type=str,
@@ -190,13 +200,13 @@ def main():
     global args
 
     Base_model = MDCnet().to(device)
-    Bcheckpoint = torch.load("pretrained/model_best_step1.pth", map_location=device)
+    Bcheckpoint = torch.load(args.MDC_path, map_location=device)
     Base_model.load_state_dict(Bcheckpoint['model'])
     Base_model = torch.nn.DataParallel(Base_model)
     Base_model.eval()
 
     Refine_model = AIRnet().to(device)
-    Rcheckpoint = torch.load("pretrained/model_best_step2-L1_v2.pth", map_location=device)
+    Rcheckpoint = torch.load(args.AIR_path, map_location=device)
     model_dict = Refine_model.state_dict()
     pretrained_dict = {k: v for k, v in Rcheckpoint['model'].items() if k in model_dict}
     model_dict.update(pretrained_dict)

@@ -16,8 +16,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from utils import *
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0,1"
-
 parser = argparse.ArgumentParser(description='Multi-scale_DepthCompletion')
 parser.add_argument('-w',
                     '--workers',
