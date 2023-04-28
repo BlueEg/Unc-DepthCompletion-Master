@@ -69,7 +69,7 @@ parser.add_argument('--resume',
                     metavar='PATH',
                     help='path to latest checkpoint (default: none)')
 parser.add_argument('--data-folder',
-                    default='/home/zhuyufan/Data/DepthCompletion/data',
+                    default='Path/to/Data',
                     type=str,
                     metavar='PATH',
                     help='data folder (default: none)')
