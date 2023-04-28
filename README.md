@@ -26,3 +26,5 @@ STEP TWO(AIRnet):
 ## EVALLATION
 >python3 eval.py --MDC-path path/to/checkpoint --AIR-path path/to/checkpoint
 
+## Ackownlagment
+This repository is built on **self-supervised-depth-completion**:https://github.com/fangchangma/self-supervised-depth-completion.
